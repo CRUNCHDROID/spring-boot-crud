@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{fragments/layout}">
+<head>
+    <title data-th-text="${articleView.title}"></title>
+</head>
+<body>
+<div class="right_col" role="main" data-layout-fragment="content">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>[[*{articleView.title}]]
+                            <small data-th-text="${#dates.format(articleView.created, 'dd MMMM yyyy HH:mm')}"></small>
+                        </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" data-th-text="${articleView.content}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/*/ <th:block data-layout-fragment="script"> /*/-->
+<!--/*/ </th:block> /*/-->
+
+</body>
+</html>

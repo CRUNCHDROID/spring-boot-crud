@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{fragments/layout}">
+<head>
+    <title>Plain Page</title>
+</head>
+
+<body>
+<div class="right_col" role="main" data-layout-fragment="content">
+    <div class="">
+
+        <div class="page-title">
+            <div class="title_left">
+                <h3></h3>
+            </div>
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <form method="get" data-th-action="@{/articles/search}">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for..." name="term">
+                        <span class="input-group-btn">
+                          <input class="btn btn-default" type="submit" value="Go!">
+                        </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Articles</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table">
+                                <thead>
+                                <tr class="headings">
+                                    <th class="column-title">#</th>
+                                    <th class="column-title">TITLE</th>
+                                    <th class="column-title">SLUG</th>
+                                    <th class="column-title">CONTENT</th>
+                                    <th class="column-title">ACTIVATED</th>
+                                    <th class="column-title">CREATED</th>
+                                    <th class="column-title">UPDATED</th>
+                                    <th class="column-title no-link last"><span class="nobr">ACTIONS</span>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <!--/*/ <th:block data-th-each="article,iteration : ${articles}"> /*/-->
+                                <tr data-th-classappend="${iteration.odd}?odd:even" class="pointer">
+                                    <td class=" " data-th-text="${article.id}"></td>
+                                    <td class=" " data-th-text="${article.title}"></td>
+                                    <td class=" " data-th-text="${article.slug}"></td>
+                                    <td class=" " data-th-text="${#strings.abbreviate(article.content,60)}"></td>
+                                    <td class="a-center">
+                                        <i data-th-class="${article.activated}?'fa fa-check-circle':'fa fa-times-circle'"></i>
+                                    </td>
+                                    <td class=" " data-th-text="${#dates.format(article.created, 'dd MMMM yyyy HH:mm')}"></td>
+                                    <td class=" " data-th-text="${#dates.format(article.updated, 'dd MMMM yyyy HH:mm')}"></td>
+                                    <td class=" last">
+                                        <a data-th-href="@{/article/view/} + ${article.slug}">View</a> - <a data-th-href="@{/article/update/} + ${article.slug}">Update</a> - <a
+                                            data-th-href="@{/article/delete/} + ${article.id}">Delete</a>
+                                    </td>
+                                </tr>
+                                <!--/*/ </th:block> /*/-->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
