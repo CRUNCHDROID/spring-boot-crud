@@ -3,9 +3,7 @@ package net.crunchdroid.configurations;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -19,7 +17,6 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
  */
 @Configuration
 public class ThymeleafWebMvcConfig extends WebMvcConfigurerAdapter {
-
 
     @Bean
     public ViewResolver viewResolver() {
@@ -45,6 +42,5 @@ public class ThymeleafWebMvcConfig extends WebMvcConfigurerAdapter {
         templateResolver.setCacheable(false);
         return templateResolver;
     }
-
 
 }

@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.crunchdroid</groupId>
-    <artifactId>spring-thymeleaf-template-integration</artifactId>
+    <artifactId>spring-boot-crud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>spring-thymeleaf-template-integration</name>
-    <description>Demo Spring Thymeleaf Template integration</description>
+    <name>spring-boot-crud</name>
+    <description>Demo Spring Boot CRUD</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -75,7 +75,7 @@
             <version>4.6.1</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
+            <groupId>org.webjars.bower</groupId>
             <artifactId>fastclick</artifactId>
             <version>1.0.6</version>
         </dependency>
